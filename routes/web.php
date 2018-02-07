@@ -5,3 +5,4 @@ Route::get('/', function () {
 });
 Route::get('home', 'HomeController@index');
 Route::get('clone', 'CloneController@index');
+Route::get('instrument', 'InstrumentShopController@index');

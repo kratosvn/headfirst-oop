@@ -19,14 +19,16 @@ class Inventory
         $this->guitars = [];
     }
 
-    public function addGuitar($serialNumber, $builder, $model, $type, $backWood, $topWood, $price) {
+    public function addGuitar($serialNumber, $builder, $model, $type, $backWood, $topWood, $price)
+    {
         $guitar = new Guitar($serialNumber, $builder, $model, $type, $backWood, $topWood, $price);
         $this->guitars[] = $guitar;
     }
 
-    public function getGuitarBySerialNumber($serialNumber){
-        foreach ($this->guitars as $guitar){
-            if($guitar->getSerialNumber() == $serialNumber){
+    public function getGuitarBySerialNumber($serialNumber)
+    {
+        foreach ($this->guitars as $guitar) {
+            if ($guitar->getSerialNumber() == $serialNumber) {
                 return $guitar;
             }
         }
@@ -34,7 +36,8 @@ class Inventory
         return null;
     }
 
-    public function search(Guitar $searchGuitar){
+    public function search(Guitar $searchGuitar)
+    {
         $builder = $searchGuitar->getBuilder();
         $model = $searchGuitar->getModel();
         $type = $searchGuitar->getType();
@@ -61,7 +64,8 @@ class Inventory
         return null;
     }
 
-    public function getGuitarList(){
+    public function getGuitarList()
+    {
         return $this->guitars;
     }
 }
