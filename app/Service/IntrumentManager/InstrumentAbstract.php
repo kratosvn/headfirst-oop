@@ -46,7 +46,4 @@ abstract class InstrumentAbstract
     {
         return $this->spec;
     }
-
-
-
 }
