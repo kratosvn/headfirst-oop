@@ -1,15 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Service\DogDoor\V2\DogDoorSimulator;
+
+use App\Service\StarbuzzDecorator\Main;
 use Illuminate\Routing\Controller as BaseController;
 
 class HomeController extends BaseController
 {
-    public function index(){
-        $dogDoorSimulator = new DogDoorSimulator();
-        $dogDoorSimulator->run();
+    public function index()
+    {
+        $this->decorator();
+    }
 
-        return view('home/index');
+    public function decorator()
+    {
+        $main = new Main();
+        $main->run();
     }
 }
